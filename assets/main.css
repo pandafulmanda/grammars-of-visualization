@@ -1,0 +1,62 @@
+body {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 100;
+
+  color: blue;
+  background-color: rgba(247, 248, 255, 1);
+  background-image: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/gridme.png);
+  background-blend-mode: lighten;
+  background-attachment: fixed;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Rubik', sans-serif;
+}
+
+h1 {
+  font-size: 2.6em;
+}
+h2 {
+  font-size: 2.15em;
+}
+h3 {
+  font-size: 1.7em;
+}
+h4 {
+  font-size: 1.25em;
+}
+h5 {
+  font-size: 1em;
+}
+h6 {
+  font-size: 0.85em;
+}
+
+blockquote {
+  font-size: inherit;
+  border-left: none;
+}
+
+
+
+[data-mode='presentation'] body {
+  font-size: 36px;
+}
+
+html[data-mode='presentation'],
+[data-mode='presentation'] body,
+[data-mode='presentation'] [class^=container],
+[data-mode='presentation'] .row {
+  height: 100%;
+}
+
+[data-mode='presentation'] .row {
+  padding: 5%;
+  border-bottom: 1px dotted blue;
+  background-color: rgba(247, 248, 255, 0.25);
+}
+
+[data-mode='presentation'] .title {
+  padding-top: 20%;
+}
