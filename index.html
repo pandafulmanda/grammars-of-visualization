@@ -48,13 +48,14 @@
     <div class="row title">
       <div class="col-md-12">
         <h3>A grammar helps us communicate.</h3>
-        <p>It helps us describe graphics to each other and to tools that make the graphics.</p>
+        <p>It helps us describe graphics to each other and to tools that make the graphics.  A grammar helps us share graphics.</p>
       </div>
     </div>
+<!-- 
     <div class="row">
       <div class="col-md-12">
         <h5>A good grammar should</h5>
-        <h3>help our analysis workflows</h3>
+        <h3>help our workflows</h3>
         <ul>
           <li>
             <p>Exploratory vs explanatory</p>
@@ -70,25 +71,55 @@
           </li>
         </ul>
       </div>
-    </div>
+    </div> -->
 
     <div class="row">
       <div class="col-md-12">
-        <h2>Timeline will go here.</h2>
+        <h2>Grammars across time</h2>
+        <ul class="timeline">
+          <li>
+            <span class="time">1967</span>
+            <strong>Semiology of Graphics</strong>
+          </li>
+          <li>
+            <span class="time">1999</span>
+            <strong>The Grammar of Graphics</strong>
+          </li>
+          <li>
+            <span class="time">2001</span>
+            <strong>Polaris</strong>
+          </li>
+          <li>
+            <span class="time">2006</span>
+            <strong>ggplot</strong>
+          </li>
+          <li>
+            <span class="time">2009</span>
+            <strong>D3.js</strong>
+          </li>
+          <li>
+            <span class="time">2013</span>
+            <strong>Vega</strong>
+          </li>
+        </ul>
       </div>
     </div>
 
-    <div class="row title">
-      <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-4">
+        <img class="img-responsive" src="./assets/images/bertin.jpg">
+      </div>
+      <div class="col-md-8">
         <h2>Semiology of Graphics</h2>
-        <p>or the parts of graphics, established by <i>Jacques Bertin</i> in 1967</p>
+        <h5 class="light">diagrams, networks, maps</h5>
+        <p>By <i>Jacques Bertin</i>, 1967</p>
       </div>
     </div>
     <div class="row">
       <div class="col-md-5">
-        <img src="./assets/images/bertin-variables.jpg" height="600">
+        <img class="img-responsive" src="./assets/images/bertin-variables.jpg">
       </div>
-      <div class="col-md-4">
+      <div class="col-md-7">
         <h4>Retinal values</h4>
         <p><i>that can encode data</i></p>
         <ul>
@@ -101,21 +132,11 @@
           <li>Texture</li>
         </ul>
       </div>
-      <div class="col-md-3">
-        <h4>Levels</h4>
-        <p><i>of organization</i></p>
-        <ul>
-          <li>Selective</li>
-          <li>Associative</li>
-          <li>Ordered</li>
-          <li>Quantitative</li>
-        </ul>
-      </div>
     </div>
 
     <div class="row">
-      <div class="col-md-5">
-        <img src="./assets/images/bertin-imposition.jpg" height="600">
+      <div class="col-md-4">
+        <img class="img-responsive" src="./assets/images/bertin-imposition.jpg">
       </div>
       <div class="col-md-4">
         <h4>Types of Imposition</h4>
@@ -128,32 +149,192 @@
           <li>Polar</li>
         </ul>
       </div>
+      <div class="col-md-4">
+        <h4>Purpose</h4>
+        <p><i>of graphics</i></p>
+        <ul>
+          <li>Recording</li>
+          <li>Communicating</li>
+          <li>Processing</li>
+        </ul>
+      </div>
     </div>
 
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-4">
+        <img class="img-responsive" src="./assets/images/wilkinson.jpg">
+      </div>
+      <div class="col-md-8">
         <h2>The Grammar of Graphics</h2>
-        <p>a first proposal and implementation by <i>Leland Wilkinson</i> in 1999</p>
-
+        <p>By <i>Leland Wilkinson</i>, 1999</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <q><small>If we endeavor to develop a charting instead of a graphing program, we will accomplish two things. First, we inevitably will offer fewer charts than people want. Second, our package will have no deep structure. Our computer program will be unnecessarily complex, because <strong>we will fail to reuse objects or routines that function similarly in different charts</strong>. And we will have <strong>no way to add new charts to our system without generating complex new code</strong>. Elegant design requires us to think about a theory of graphics, not charts.</small></q>
+      </div>
+      <div class="col-md-5">
+        <img class="img-responsive" src="./assets/images/toys.jpg">
+      </div>
+      <div class="col-md-2">
+        <h3 class="text-center">vs</h3>
+      </div>
+      <div class="col-md-5">
+        <img class="img-responsive" src="./assets/images/legos.jpg">
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-12">
-        <h2>Polaris, the start of Tableau</h2>
-        <p>2001</p>
+        <h2>Stages of graphics creation</h2>
+        <ol>
+          <li><strong>Specification</strong></li>
+          <li>Assembly</li>
+          <li>Display</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="row how-to-pie">
+      <div class="col-md-12">
+        <div class="col-md-3">
+          <h5 class="step light">Data</h5>
+          <img class="img-responsive" src="./assets/images/wilkinson-pie-1.jpg">
+        </div>
+        <div class="col-md-3">
+          <h5 class="step light">Algebra</h5>
+          <img class="img-responsive" src="./assets/images/wilkinson-pie-2.jpg">
+        </div>
+        <div class="col-md-3">
+          <h5 class="step light">Scales</h5>
+          <img class="img-responsive" src="./assets/images/wilkinson-pie-3.jpg">
+        </div>
+        <div class="col-md-3">
+          <h5 class="step light">Statistics</h5>
+          <img class="img-responsive" src="./assets/images/wilkinson-pie-4.jpg">
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="col-md-3">
+          <h5 class="step light">Geometry</h5>
+          <img class="img-responsive" src="./assets/images/wilkinson-pie-5.jpg">
+        </div>
+        <div class="col-md-3">
+          <h5 class="step light">Coordinates</h5>
+          <img class="img-responsive" src="./assets/images/wilkinson-pie-6.jpg">
+        </div>
+        <div class="col-md-3">
+          <h5 class="step light">Aesthetics</h5>
+          <img class="img-responsive" src="./assets/images/wilkinson-pie-7.jpg">
+        </div>
+        <div class="col-md-3">
+          <h5 class="light">Result</h5>
+          <img class="img-responsive" src="./assets/images/wilkinson-pie-8.jpg">
+        </div>
       </div>
     </div>
 
     <div class="row">
+      <div class="col-md-4">
+        <img class="img-responsive" src="./assets/images/wilkinson-demo.jpg">
+      </div>
+      <div class="col-md-8">
+        <pre>
+          <code class="big">
+DATA: longitute, latitude = map(source("US states"))
+TRANS: octile = cut(popden, 8)
+GRAPH: begin(origin(0,0))
+  COORD: rect(dim(3, 4), rect(dim(1, 2)))
+  ELEMENT: polygon(position(longitude*latitude*1*octile), color.hue(popden))
+GRAPH: end
+GRAPH: begin(origin(1in, 0))
+  COORD: transpose(dim(3, 4), rect(dim(1, 2)))
+  ELEMENT: point(position(state/octile*popden*1*1), color.hue(popden))
+  ELEMENT: line(position(state/octile*popden*1*1))
+GRAPH: end
+          </code>
+        </pre>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <h2>Polaris</h2>
+        <h5 class="light">A System for Query, Analysis, and Visualization of Multidimensional Relational Databases</h5>
+        <p>By <i>Chris Stolte, Diane Tang, and Pat Hanrahan</i>, 2001</p>
+        <p><i>aimed to enable rapid exploratory analysis with expressive visuals for data in relational databases</i></p>
+      </div>
+      <div class="col-md-8">
+        <img class="img-responsive" src="./assets/images/polaris-ui.gif">
+      </div>
+    </div>
+
+
+    <div class="row">
       <div class="col-md-12">
+      <h2>Specification</h2>
+      <ul>
+        <li>
+          Table configurations across panes
+          <ul>
+            <li>Mapping of data sources to layers</li>
+            <li>Rows, columns, and layers</li>
+            <li>Selection and partitioning of records</li>
+            <li>Grouping of data and computation</li>
+          </ul>
+        </li>
+        <li>
+          Type of graphic inside panes
+        </li>
+        <li>
+          Details of visual encodings
+          <ul>
+            <li>Mapping of data fields to retinal properties</li>
+          </ul>
+        </li>
+      </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5">
+        <h3>Interactions for exploration</h3>
+        <ul>
+          <li>Deriving additional fields</li>
+          <li>Sorting and filtering</li>
+          <li>Brushing and tooltips</li>
+          <li>Undo and redo</li>
+          <li>Zooming</li>
+        </ul>
+      </div>
+      <div class="col-md-7">
+        <img class="img-responsive" src="./assets/images/polaris-system.png">
+      </div>
+    </div>
+
+<!--     <div class="row">
+      <div class="col-md-12">
+        <h2>Additional screenshots of polaris here.</h2>
+        <p>Discuss how visual spec/grammar enables complex display and even informs queries to the database.</p>
+      </div>
+    </div>
+ -->
+
+    <div class="row">
+      <div class="col-md-4">
+        <img class="img-responsive" src="./assets/images/hadley.jpg">
+      </div>
+      <div class="col-md-8">
         <h2>ggplot, ggplot2</h2>
-        <p>a free and layered grammar by <i>Hadley Wikham</i> in 2006</p>
+        <p>By <i>Hadley Wikham</i>, begun in 2006</p>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-4">
+        <img class="img-responsive" src="./assets/images/bostock.jpeg">
+      </div>
+      <div class="col-md-8">
         <h2>Protovis, D3.js</h2>
         <p>shareable interactive graphics by <i>Mike Bostock</i> in 2009</p>
       </div>
@@ -161,7 +342,10 @@
 
 
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-4">
+        <img class="img-responsive" src="./assets/images/satyanarayan.png">
+      </div>
+      <div class="col-md-8">
         <h2>Vega, Vega-lite</h2>
         <p>a portable grammar with composable interactions by <i>Arvind Satyanarayan</i> in 2013</p>
       </div>
@@ -169,19 +353,33 @@
 
     <div class="row">
       <div class="col-md-12">
-        <h2>Observations across grammars will go here</h2>
+        <img class="img-responsive really" src="https://imgs.xkcd.com/comics/convincing.png">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <img class="img-responsive" src="./assets/images/cartoon-graph.png">
       </div>
     </div>
 
 
     <div class="row">
       <div class="col-md-12">
-        <h2>Grammars now and beyod</h2>
+        <h2>Grammars now and beyond</h2>
         <ul>
           <li>3D and virtual reality</li>
           <li>network graphics</li>
-          <li>domain specific, higher level grammars</li>
+          <li>cross-language support</li>
+          <li>domain specific grammars</li>
         </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Sources</h2>
+        <p>Coming soon.</p>
       </div>
     </div>
 
@@ -205,6 +403,7 @@
   <script type="text/javascript" src="//unpkg.com/in-view@0.4.3/dist/in-view.min.js"></script>
   <!-- <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/animejs/1.0.0/anime.min.js"></script> -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/ractive/0.7.3/ractive.min.js"></script>
+  <script type="text/javascript" src="./assets/libs/animatedScrollTo.js"></script>
 
   <script type="text/javascript" src="./assets/views.js"></script>
   <script type="text/javascript" src="./assets/main.js"></script>

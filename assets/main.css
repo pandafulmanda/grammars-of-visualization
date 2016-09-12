@@ -4,6 +4,7 @@ body {
   font-weight: 100;
 
   color: blue;
+  // background-color: pink;
   background-color: rgba(247, 248, 255, 1);
   background-image: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/gridme.png);
   background-blend-mode: lighten;
@@ -33,12 +34,13 @@ h6 {
   font-size: 0.85em;
 }
 
-blockquote {
-  font-size: inherit;
-  border-left: none;
+.big {
+  font-size: 1.25em;
 }
 
-
+.light {
+  font-weight: 400;
+}
 
 [data-mode='presentation'] body {
   font-size: 36px;
@@ -53,10 +55,39 @@ html[data-mode='presentation'],
 
 [data-mode='presentation'] .row {
   padding: 5%;
-  border-bottom: 1px dotted blue;
   background-color: rgba(247, 248, 255, 0.25);
 }
 
 [data-mode='presentation'] .title {
   padding-top: 20%;
+}
+
+.timeline {
+  list-style: none;
+  padding: 0;
+}
+
+.timeline li {
+  display: block;
+  width: 100%;
+}
+.timeline li strong, .timeline li .time {
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 1rem 1rem 1rem 0;
+}
+.timeline li .time {
+  text-align: right;
+}
+.how-to-pie h5.step::after {
+  content: '→';
+  float: right;
+}
+
+.img-responsive {
+  margin: auto;
+}
+
+.img-responsive.really {
+  width: 100%;
 }

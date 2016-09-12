@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+body {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke-width: 1.5px;
+}
+
+</style>
+<body>
+<script src="//d3js.org/d3.v3.min.js"></script>
+<script>
+
+var margin = {top: 20, right: 20, bottom: 30, left: 50},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+var formatDate = d3.time.format("%Y-%m-%d");
+
+var c10 = d3.scale.category10();
+
+var x = d3.time.scale()
+    .range([0, width]);
+
+var y = d3.scale.linear()
+    .range([height, 0]);
+
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom");
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left");
+
+var totalLine = d3.svg.line()
+    .x(function(d) { return x(d.date); })
+    .y(function(d) { return y(d.totalMembers); });
+
+var activeLine = d3.svg.line()
+    .x(function(d) { return x(d.date); })
+    .y(function(d) { return y(d.activeMembers); });
+
+var differenceLine = d3.svg.line()
+    .x(function(d) { return x(d.date); })
+    .y(function(d) { return y(d.totalMembers - d.activeMembers); });
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+var dataSource = "https://gist.githubusercontent.com/neerajt/6f0ff957e7ff3adab63471460cade5d5/raw/ea7d0a76f02113ab2e8e58b95abc1d2fb8b6782b/members.csv";
+
+d3.csv(dataSource, type, renderGraph);
+
+
+function renderGraph(error, data) {
+  if (error) throw error;
+
+  x.domain(d3.extent(data, function(d) { return d.date; }));
+  y.domain(d3.extent(data, function(d) { return d.totalMembers; }));
+
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
+
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Members Count");
+
+  svg.append("path")
+      .datum(data)
+      .attr("class", "line total")
+      .attr("stroke", c10(1))
+      .attr("d", totalLine);
+
+  svg.append("path")
+      .datum(data)
+      .attr("class", "line active")
+      .attr("stroke", c10(2))
+      .attr("d", activeLine);
+
+  svg.append("path")
+      .datum(data)
+      .attr("class", "line difference")
+      .attr("stroke", c10(3))
+      .attr("d", differenceLine);
+
+}
+
+function type(d) {
+  d.date = formatDate.parse(d['Date']);
+  d.totalMembers = parseInt(d.TotalMembers);
+  d.activeMembers = parseInt(d.ActiveMembers);
+  return d;
+}
+
+</script>
+</body>
+</html>

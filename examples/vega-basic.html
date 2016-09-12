@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<head>
+  <title>Vega Lite Bar Chart</title>
+  <meta charset="utf-8">
+
+  <script type="text/javascript" src="//cdn.jsdelivr.net/lodash/4.15.0/lodash.min.js"></script>
+  <script src="//d3js.org/d3.v3.min.js"></script>
+  <script src="//vega.github.io/vega/vega.js"></script>
+  <script src="//vega.github.io/vega-lite/vega-lite.js"></script>
+  <script src="//vega.github.io/vega-editor/vendor/vega-embed.js"></script>
+
+  <style media="screen">
+    /* Add space between vega-embed links  */
+    .vega-actions a {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Container for the visualization -->
+  <div id="vis"></div>
+
+  <script>
+
+  var dataSource = "https://gist.githubusercontent.com/neerajt/6f0ff957e7ff3adab63471460cade5d5/raw/237be0a67833f4d6cdf819142865fa88767619b2/members.json"
+
+  // Assign the specification to a local variable vlSpec.
+  var vlSpec = {
+    "width": 500,
+    "height": 500,
+    "layers": [
+      {
+        "description": "Members Over Time.",
+        "data": {
+          "url": dataSource,
+          "format": {"type": "json"}
+        },
+        "mark": "line",
+        "encoding": {
+          "x": {"field": "Date","type": "temporal"},
+          "y": {"field": "ActiveMembers","type": "quantitative"},
+          "color": {"value": "red"}
+        }
+      },
+      {
+        "description": "Active Members Over Time.",
+        "data": {
+          "url": dataSource,
+          "format": {"type": "json"}
+        },
+        "mark": "line",
+        "encoding": {
+          "x": {"field": "Date","type": "temporal"},
+          "y": {"field": "TotalMembers","type": "quantitative"},
+          "color": {"value": "black"}
+        }
+      },
+      {
+        "description": "Inactive Members Over Time.",
+        "data":{
+                  "url": dataSource,
+                  "format": {"type": "json"}
+        },
+        "transform": {
+          "calculate": [{"field": "InactiveMembers", "expr": "datum.TotalMembers - datum.ActiveMembers"}]
+        },
+        "mark": "line",
+        "encoding": {
+          "x": {"field": "Date", "type": "temporal"},
+          "y": {"field": "InactiveMembers","type": "quantitative"},
+          "color": {"value": "blue"}
+        }
+      }
+      
+    ]
+  };
+  var embedSpec = {
+    mode: "vega-lite",  // Instruct Vega-Embed to use the Vega-Lite compiler
+    spec: vlSpec
+    // You can add more vega-embed configuration properties here. 
+    // See https://github.com/vega/vega/wiki/Embed-Vega-Web-Components#configuration-propeties for more information.
+  };
+  // Embed the visualization in the container with id `vis`
+  vg.embed("#vis", embedSpec, function(error, result) {
+    // Callback receiving the View instance and parsed Vega spec
+    // result.view is the View, which resides under the '#vis' element
+  });
+  </script>
+</body>
+</html>
